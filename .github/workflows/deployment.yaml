@@ -10,11 +10,11 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environement: production
+    environment: production
 
     steps:
       - name: Checkout
-        run: actions/checkout@V3
+        uses: actions/checkout@V3
 
       - name: Configure AAWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
