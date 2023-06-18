@@ -55,7 +55,7 @@ function App() {
           fontFamily="Robo"
           my="5px"
         >
-          Golden Goody
+          Bake The Cake
         </Text>
 
         <Checkout order={order} />

@@ -38,3 +38,13 @@ jobs:
           docker push gerkou/store-app:$IMAGE_TAG
           echo "::set-output name=image::gerkou/store-app:$IMAGE_TAG"
 
+      - name: Install Kubectl
+        uses: azure/setup-kubectl@v1
+      
+      - name: Update Kubectl Context
+        run: aws eks update-kubeconfig --name attractive-monster-1687115524 --region us-east-1
+
+      - name: Deploy Image to Amazon EKS
+        run: |
+          kubectl set image deployment/store store=${{ steps.build-image.outputs.image }}
+
