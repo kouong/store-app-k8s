@@ -34,7 +34,7 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t gerkou/store-app:$IMAGE_TAG
+          docker build -t gerkou/store-app:$IMAGE_TAG .
           docker push gerkou/store-app:$IMAGE_TAG
           echo "::set-output name=image::gerkou/store-app:$IMAGE_TAG"
 
