@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build, Tag  and Push image to DockerHub
-        id: build-iamge
+        id: build-image
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
